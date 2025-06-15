@@ -31,3 +31,36 @@ A web-based application designed to manage and streamline blood donation activit
 
 ## 📁 Project Structure
 
+Blood-Donor-Management/
+├── manage.py
+├── db.sqlite3
+├── blood_bank/
+│ ├── migrations/
+│ ├── static/
+│ ├── templates/
+│ ├── admin.py
+│ ├── apps.py
+│ ├── models.py
+│ ├── views.py
+│ └── urls.py
+└── requirements.txt
+
+
+---
+
+## 🔧 Installation
+
+1. **Clone the Repository**:
+
+```bash
+git clone https://github.com/NiteshVarma31/Blood-Donor-Management-.git
+cd Blood-Donor-Management-
+
+python -m venv venv
+source venv/bin/activate   # On Windows, use venv\Scripts\activate
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
