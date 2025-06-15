@@ -1,0 +1,186 @@
+<html>
+{% block content %}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        select {
+                width: 100%;
+                margin-bottom: 15px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+ 
+        .main {
+                background-color: #fff;
+                border-radius: 15px;
+                box-shadow: 0 0 20px
+                    rgba(0, 0, 0, 0.2);
+                padding: 15px;
+                width: 350px;
+                opacity: 0.8;
+            }
+ 
+            .main h2 {
+                color: #1d86ac;
+                margin-bottom: 20px;
+            }
+    button[type="submit"] {
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                background-color: #a8c234;
+                color: white;
+                cursor: pointer;
+                width: 100%;
+                font-size: 16px;
+    }
+    body{
+        background-image: url(/static/img/Dementia.jpg);
+        background-size: 100vw 100vh;   
+    }
+</style>
+<body>
+
+<form method="POST">
+{% csrf_token %}
+<div class="main">
+<table class="table">
+    <h2 class="display-1">Dementia</h2>
+      <tr> 
+        <td>
+            Subject ID:
+        </td>
+        <td>
+            <input type="text" name="textsubject">
+        </td>
+      </tr>
+      <tr>
+        <td> 
+            MRI ID:
+        </td>  
+      <td>
+        <input type="text" name="textmri">
+      </td>
+      </tr>
+      <tr>
+        <td>
+            Visit:
+        </td>  
+    <td>
+        <input type="text" name="textvisit">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            MR Delay:
+        </td>  
+    <td>
+        <input type="text" name="textmrdelay">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            M/F:
+        </td>  
+    <td>
+        <input type="text" name="textmf">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            Hand: 
+        </td> 
+    <td>
+        <input type="text" name="textdhand">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            Age:
+        </td>  
+    <td>
+        <input type="text" name="textage">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            EDUC:
+        </td>  
+    <td>
+        <input type="text" name="texedu">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            SES:
+        </td>  
+    <td>
+        <input type="text" name="textses">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            MMSE:
+        </td>  
+    <td>
+        <input type="text" name="textmmse">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            CDR:
+        </td>  
+    <td>
+        <input type="text" name="textcdr">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            eTIV:
+        </td>  
+    <td>
+        <input type="text" name="textetiv">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            nWBV:
+        </td>  
+    <td>
+        <input type="text" name="textnwbv">
+    </td> 
+    </tr>
+    <tr>
+        <td>
+            ASF:
+        </td>  
+    <td>
+        <input type="text" name="textasf">
+    </td> 
+    </tr>
+    <tr>
+    <td>
+           <button class="btn btn-primary btn-lg" type="submit" name="buttonpredict">Predict</button>
+      </td>
+      <ul>
+        <li><a href="{% url 'userlogout' %}">Logout</a></li>
+      </ul>
+      <td>
+           {{result}}
+      </td>    
+    </tr> 
+</table>  
+</div>
+</form>
+</body>
+{% endblock %}
+</html>

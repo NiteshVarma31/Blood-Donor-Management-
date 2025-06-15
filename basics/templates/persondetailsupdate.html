@@ -1,0 +1,68 @@
+{% extends 'donor.html'   %}
+
+{% block content  %}
+<form method="POST">
+{% csrf_token %}
+<table>
+<tr>
+    <td>
+        Name
+    </td>
+    <td>
+        <input type="text"  value="{{ result.PER_NAME }}"   name="textpername"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+       Email
+    </td>
+    <td>
+        <input type="text" value="{{ result.PER_PHONENO }}" name="textphoneno"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+       Email
+    </td>
+    <td>
+        <input type="text" value="{{ result.PER_EMAIL }}" name="textperemail"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+       Email
+    </td>
+    <td>
+        <input type="text" value="{{ result.PER_ADDRESS }}" name="textperaddress"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+       Email
+    </td>
+    <td>
+        <input type="text" value="{{ result.PER_DOB }}" name="textperdob"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+       Email
+    </td>
+    <td>
+        <input type="text" value="{{ result.PER_BLOODGROUPNAME }}" name="textbloodgroupname"></input> 
+    </td>
+</tr>
+<tr>
+    <td>
+        <button type="submit" name="submit" >update </button>
+    </td>
+</tr>
+<tr>
+    <td>
+        
+    </td>
+</tr>
+</table>
+</form>
+
+{% endblock %}

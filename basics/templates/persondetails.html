@@ -1,0 +1,126 @@
+{% extends 'donor.html'   %}
+{% block content  %}
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f3f3f3;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                opacity: 0.9;
+            }
+ 
+            .main {
+                background-color: #fff;
+                border-radius: 15px;
+                box-shadow: 0 0 20px
+                    rgba(0, 0, 0, 0.2);
+                padding: 15px;
+                width: 350px;
+            }
+ 
+            .main h2 {
+                color: #af40f4;
+                margin-bottom: 20px;
+            }
+ 
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: #555;
+                font-weight: bold;
+            }
+ 
+            input[type="text"],
+            input[type="user"],
+            input[type="password"],
+            select {
+                width: 100%;
+                margin-bottom: 15px;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+ 
+            button[type="submit"] {
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                background-color: #af40f4;
+                color: white;
+                cursor: pointer;
+                width: 100%;
+                font-size: 16px;
+            }
+            body{
+        background-image: url(/static/img/person.jpg);
+        background-size: 90vw 100vh;
+        
+        
+    }
+        </style>
+ 
+    <body>
+        <div class="main">
+            <h2>Person Details</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="first"
+                    >Name:</label>
+                <input
+                    type="text"
+                    id="first"
+                    name="textpername"
+                    required/>
+ 
+                <label for="last"
+                    >Phone Number:</label>
+                <input
+                    type="text"
+                    id="last"
+                    name="textphoneno"
+                    required/>
+ 
+                <label for="user">Email Id:</label>
+                <input
+                    type="text"
+                    id="User"
+                    name="textperemail"
+                    required/>
+                
+                <label for="user">Address:</label>
+                <input
+                    type="text"
+                    id="User"
+                    name="textperaddress"
+                    required/>
+
+                <label for="user">DOB:</label>
+                <input
+                    type="text"
+                    id="User"
+                    name="textperdob"
+                    required/>
+
+                <label for="password"
+                    >Blood Group:</label
+                >
+                <input
+                    type="text"
+                    id="password"
+                    name="textbloodgroupname"
+                    
+                    required/>
+                <button type="submit" name="submit">
+                    Save
+                </button>
+                {{result}}
+            </form>
+        </div>
+    </body>
+    {% endblock %}
+

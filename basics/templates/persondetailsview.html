@@ -1,0 +1,79 @@
+{% extends 'donor.html'   %}
+{% block content  %}
+<form method="POST">
+{% csrf_token %}
+<br/>
+{{ request.user }}
+{{ request.user.per_name }}
+{{request.user.per_phoneno }}
+{{ request.user.per_email }}
+{{request.user.per_address }}
+{{ request.user.per_dob }}
+{{request.user.per_bloodgroupname }}
+<a href="/donor/" type="submit">Donor</a>
+<br/>
+<br/>
+<table>
+<tr>  
+    <td>
+        Name
+    </td>
+    <td>
+      Number
+    </td>
+    <td>
+      Email
+    </td>
+    <td>
+      Address
+    </td>
+    <td>
+      DOB
+    </td>
+    <td>
+      Blood Group
+    </td>
+    <td>
+        Update
+    </td>
+    <td>
+        Delete
+    </td>
+</tr>
+{%  for  persondetails in result  %}
+<tr>
+    <td>
+      {{  persondetails.PER_NAME  }}
+    </td>
+	 <td>
+      {{  persondetails.PER_PHONENO  }}
+    </td>
+	 <td>
+      {{  persondetails.PER_EMAIL  }}
+    </td>
+	 <td>
+      {{  persondetails.PER_ADDRESS  }}
+    </td>
+    <td>
+       {{ persondetails.PER_DOB }}
+    </td>
+	<td>
+       {{ persondetails.PER_BLOODGROUPNAME }}
+    </td>
+    <td>
+        <a href="/persondetailsupdate/{{persondetails.id}}">update</a>
+    </td>
+    <td>
+        <a href="/persondetailsdelete/{{persondetails.id}}">delete</a>
+    </td>
+</tr>
+{% endfor %}
+<tr>
+
+</tr>
+<tr>
+</tr>
+</table>
+</form>
+
+{% endblock %}
